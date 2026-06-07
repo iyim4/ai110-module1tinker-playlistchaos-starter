@@ -1,5 +1,24 @@
 # Playlist Chaos
 
+## Reflections on AI Usage
+**Identified & Resolved Bugs**
+- searching is exact match, not substring ("sleep music" not "sleep")
+- lucky pick never chooses mixed category
+- hype ratio is alway 1.0
+- average energy is too low
+- most common artist label shows 1 song**s** which should be 1 song
+
+While fixing these bugs using Claude Code, I learned that the AI needs more than 2 lines of code for context, else it will scan the entire file. The AI did need human guidance, since it became confused and gave a vague answer after scanning the entire file. The best results came when it was given one method and a specific issue with a guess for the source, which the AI then verified by reading just that method.
+
+Testing after integreating AI suggestions was performed through print statement and user testing on the app. I believe next steps would be to implemente an automated testing suite to save time and reduce errors that may not have been caught with updated changes.
+
+**Starting this app on Windows**: `python -m streamlit run app.py`
+The instructions "In your terminal, start the app: streamlit run app.py" Did not work on my Windows machine.
+
+---
+
+## Background
+
 Your AI assistant tried to build a smart playlist generator. The app runs, but some of the behavior is unpredictable. Your task is to explore the app, investigate the code, and use an AI assistant to debug and improve it.
 
 This activity is your first chance to practice AI-assisted debugging on a codebase that is slightly messy, slightly mysterious, and intentionally imperfect.
